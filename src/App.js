@@ -25,7 +25,7 @@ export default function App() {
           >
             GitHub
           </a> and hosted on  <a
-            href="https://github.com/PabaleloLucia/react-weather-app"
+            href="https://remarkable-longma-d613fa.netlify.app/"
             target="_blank"
             rel="noreferrer"
           >
