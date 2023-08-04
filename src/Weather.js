@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CurrentDate from "./CurrentDate";
 import { InfinitySpin } from "react-loader-spinner";
 import axios from "axios";
 import "./Weather.css";
@@ -16,7 +17,7 @@ export default function Weather(props) {
       description: response.data.condition.description,
       iconUrl:
         "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png",
-      dateTime: "Wednesday 11:00",
+      date: new Date(response.data.time * 1000),
     });
   }
 
@@ -51,7 +52,9 @@ export default function Weather(props) {
         </form>
         <h1>{weatherInfo.city}</h1>
         <ul>
-          <li>{weatherInfo.dateTime}</li>
+          <li>
+            <CurrentDate date={weatherInfo.date} />
+          </li>
           <li className="text-capitalize">{weatherInfo.description}</li>
         </ul>
         <div className="row mt-3">
