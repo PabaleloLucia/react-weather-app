@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import WeatherDetails from "./WeatherDetails";
-
+import WeatherForecast from "./WeatherForecast";
 import { InfinitySpin } from "react-loader-spinner";
 import axios from "axios";
 import "./Weather.css";
@@ -12,7 +12,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherInfo({
       ready: true,
-
+      coordinates: response.data.coordinates,
       city: response.data.city,
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
@@ -63,6 +63,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherDetails info={weatherInfo} />
+        <WeatherForecast coordinates={weatherInfo.coordinates} />
       </div>
     );
   } else {
