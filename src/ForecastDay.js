@@ -1,5 +1,6 @@
 import React from "react";
 import "./WeatherForecast.css";
+import "./ForecastDay.css";
 
 export default function ForecastDay(props) {
   function day() {
@@ -12,12 +13,13 @@ export default function ForecastDay(props) {
   }
 
   return (
-    <div>
+    <div className="forecastDay">
       <div className="forecast-day">{day()}</div>
 
       <img
         src={props.forecastInfo.condition.icon_url}
         alt={props.forecastInfo.condition.description}
+        className="forecast-image"
       />
 
       <div className="forecast-units">
