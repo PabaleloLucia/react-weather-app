@@ -32,11 +32,11 @@ export default function Weather(props) {
 
   function handlesubmission(event) {
     event.preventDefault();
+    searchCity();
   }
 
   function handleChangedCity(event) {
     setCity(event.target.value);
-    searchCity();
   }
 
   if (weatherInfo.ready) {
